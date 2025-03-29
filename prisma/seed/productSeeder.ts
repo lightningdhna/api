@@ -1,4 +1,4 @@
-import prisma from '../../prisma.service';
+import prisma from '../prisma.service';
 import { faker } from '@faker-js/faker';
 
 export const randomProduct = () => {

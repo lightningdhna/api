@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-
+import { randomProduct } from 'prisma/seed/productSeeder';
+import prisma from 'prisma/prisma.service';
 @Injectable()
 export class ProductService {
   create(createProductDto: CreateProductDto) {
@@ -9,7 +10,8 @@ export class ProductService {
   }
 
   findAll() {
-    return `This action returns all product`;
+    const products = await prisma.product.findMany();
+    return products;
   }
 
   findOne(id: number) {

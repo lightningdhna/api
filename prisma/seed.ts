@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'; // Import Prisma Client
-import { seedProducts } from './migrations/seed/productSeeder';
+import { seedProducts } from './/seed/productSeeder';
 
 const prisma = new PrismaClient(); // Khởi tạo Prisma Client
 
