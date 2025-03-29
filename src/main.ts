@@ -14,10 +14,7 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   await app.listen(process.env.PORT ?? 3000);
-  console.log(prisma)
-  const value = await prisma.user.findMany();
-  console.log(value)
-  await test(); // Gọi hàm test() để thêm sản phẩm thử nghiệm
+
 
 }
 bootstrap();
