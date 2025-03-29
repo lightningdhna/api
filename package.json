@@ -1,4 +1,7 @@
 {
+  "prisma": {
+    "seed": "npx ts-node prisma/seed.ts"
+  },
   "name": "api",
   "version": "0.0.1",
   "description": "",
@@ -6,7 +9,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+  
+    "build": "npx prisma generate --no-engine && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -20,9 +24,20 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.6.0",
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
+    "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/platform-fastify": "^11.0.12",
+    "@prisma/client": "^6.5.0",
+    "@prisma/extension-accelerate": "^1.3.0",
+    "@prisma/extension-optimize": "^1.1.8",
+    "@prisma/instrumentation": "^6.5.0",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.2",
+    "prisma": "^6.5.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },

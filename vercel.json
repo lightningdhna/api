@@ -1,4 +1,10 @@
 {
+    "build": {
+        "env": {
+          "DATABASE_URL_2": "@database_url_2",
+          "DIRECT_URL_2": "@direct_url_2"
+        }
+      },
     "functions": {
       "api/**/*.ts": {
         "maxDuration": 10

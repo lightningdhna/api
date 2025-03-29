@@ -1,0 +1,25 @@
+generator client {
+  provider  = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_2")
+  directUrl      = env("DIRECT_URL_2")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id         String   @id @default(uuid()) // Sử dụng UUID để tạo chuỗi ngẫu nhiên
+  name       String
+  supplierId String
+  price      Int    @default(0)  
+  note       String?  // Ghi chú, có thể null
+  date       DateTime @default(now()) // Ngày cập nhật thông tin, mặc định là thời điểm hiện tại
+}
